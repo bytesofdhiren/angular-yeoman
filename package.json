@@ -1,4 +1,4 @@
-    {
+{
   "name": "helloworld",
   "private": true,
   "devDependencies": {
@@ -34,6 +34,7 @@
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
     "protractor": "^3.0.0",
+    "protractor-jasmine2-html-reporter": "0.0.5",
     "time-grunt": "^1.0.0"
   },
   "engines": {
