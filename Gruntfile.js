@@ -514,8 +514,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
     'jshint'
-//    'protractor_webdriver',
-//    'protractor:singlerun'
+    'protractor_webdriver',
+    'protractor:singlerun'
   ]);
 
     grunt.registerTask('build', [
