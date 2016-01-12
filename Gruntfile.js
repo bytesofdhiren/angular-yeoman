@@ -102,7 +102,7 @@ module.exports = function (grunt) {
                     async: true
                 }
             }
-        }
+        },
         // The actual grunt server settings
         connect: {
             options: {
