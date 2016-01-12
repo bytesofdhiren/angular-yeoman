@@ -30,6 +30,8 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-protractor-webdriver');
 
+    grunt.loadNpmTasks('grunt-shell-spawn');
+
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -91,12 +93,16 @@ module.exports = function (grunt) {
                 configFile: "protractor.conf.js",
                 noColor: false
             },
-            singlerun: {},
-            your_target: {
-                all: {},
-            },
+           singlerun:{}          
         },
-
+	shell: {
+            xvfb: {
+                command: 'Xvfb :99 -ac -screen 0 1600x1200x24',
+                options: {
+                    async: true
+                }
+            }
+        }
         // The actual grunt server settings
         connect: {
             options: {
@@ -126,7 +132,7 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    port: 9001,
+                    port: 9000,
                     middleware: function (connect) {
                         return [
               connect.static('.tmp'),
@@ -491,6 +497,8 @@ module.exports = function (grunt) {
         }
     });
 
+	grunt.registerTask('protractor-chrome', ['protractor:chrome']);
+
 
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
         if (target === 'dist') {
@@ -513,9 +521,16 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('test', [
-    'jshint',
+      'clean:server',
+      'concurrent:test',
+//      'autoprefixer',
+      'connect:test',
+      'karma',
     'protractor_webdriver',
-    'protractor:singlerun'
+//    'protractor:firefox'
+	'shell:xvfb',
+        'protractor:singlerun',
+        'shell:xvfb:kill'
   ]);
 
     grunt.registerTask('build', [

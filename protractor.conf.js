@@ -6,7 +6,8 @@ exports.config = {
     onPrepare: function () {
         jasmine.getEnv().addReporter(
             new Jasmine2HtmlReporter({
-                savePath: 'target'
+                savePath: 'target/',
+		screenshotsFolder: 'screenshots'
             })
         );
     }

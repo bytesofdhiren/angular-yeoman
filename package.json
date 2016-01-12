@@ -26,6 +26,7 @@
     "grunt-postcss": "^0.5.5",
     "grunt-protractor-runner": "^3.0.0",
     "grunt-protractor-webdriver": "^0.2.5",
+    "grunt-shell-spawn": "^0.3.10",
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",

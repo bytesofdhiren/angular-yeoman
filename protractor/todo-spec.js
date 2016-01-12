@@ -25,7 +25,7 @@ describe('angularjs homepage todo list', function () {
         it('should add a todo', function () {
             browser.get('http://localhost:9000/#/about');
 
-            expect(browser.getTitle()).toEqual('http://localhost:9000/#/about');
+            expect(browser.getTitle()).toEqual('http://localhost:9000/#/1about');
 
 
             //element(by.model('username')).sendKeys('Shivam');
