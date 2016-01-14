@@ -41,8 +41,8 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "scripts": {
-    "test": "grunt test",
-    "update-webdriver": "node_modules/protractor/bin/webdriver-manager update"
+  "dependencies": {
+    "imagemin":"^4.0.0",
+    "vinyl-fs": "2.2.1"
   }
 }
