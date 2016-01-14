@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+#
+# To enable this hook, rename this file to "post-update".
+
+curl http://azure-ubuntu-rr.cloudapp.net:52679/git/notifyCommit?url=https://github.com/dhirenrouterabbit/angular-yeoman.git[&branches=production]
